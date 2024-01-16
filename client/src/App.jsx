@@ -1,29 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './App.css';
 import ImageUpload from './ImageUpload';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../firebase';
 
 function App() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
-
-  const handleImageSelect = (event) => {
-    const file = event.target.files[0];
-    setSelectedImage(file);
-    setImagePreview(URL.createObjectURL(file));
-  };
-
-  const handleSubmit = () => {
-    // Code to send the image to the API
-    console.log("Submit the image:", selectedImage);
-  };
-
+  async function test(){
+    await addDoc(collection(db, "user"),{
+      firstname:"Adit",
+      lastname:"Karode",
+      email:"adit.karode@gmail.com"
+    });
+  }
   return (
-    <div>
-      <h1>Image to Calories</h1>
-      <ImageUpload onImageSelect={handleImageSelect} />
-      {imagePreview && <img src={imagePreview} alt="Preview" style={{ maxWidth: '300px', maxHeight: '300px' }} />}
-      <button onClick={handleSubmit}>Submit</button>
+    <div className="App">
+      <h1>snap-calorie</h1>
+      <ImageUpload />
+      <button onClick={()=>{
+        test();
+      }}> Query Test </button>
+
     </div>
   );
 }
 
 export default App;
+

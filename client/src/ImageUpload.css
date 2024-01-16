@@ -1,0 +1,43 @@
+/* ImageUpload.css */
+
+/* Style for the main container */
+.ImageUpload {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Style for the title */
+  h1 {
+    font-size: 24px;
+  }
+  
+  /* Style for the image upload input */
+  input[type="file"] {
+    display: none; /* Hide the default file input */
+  }
+  
+  /* Style for the custom upload button */
+  label.upload-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Style for the selected image container */
+  .image-container {
+    margin-top: 20px;
+    display: none; /* Initially hide the image container */
+  }
+  
+  /* Style for the uploaded image */
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  
